@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13.8@sha256:a74a47b4f79c2b100d1b1d015f2ad23b50e69b363583214b1e582784f858e7ae
+    container_name: postgres
+    environment:
+      POSTGRES_DB: "lombok_repro"
+      POSTGRES_HOST_AUTH_METHOD: trust
+    restart: always
+    ports:
+      - "5432:5432"
